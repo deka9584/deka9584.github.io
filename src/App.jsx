@@ -5,6 +5,7 @@ import WsHeader from './components/WsHeader';
 import { GlobalProvider } from './context/Context';
 import RouteMap from './constants/RouteMap';
 import PongPage from './pages/PongPage';
+import WsFooter from './components/WsFooter';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path={RouteMap.HOME} element={<HomePage />} />
           <Route path={RouteMap.PONG} element={<PongPage />} />
         </Routes>
+        <WsFooter/>
       </div>
     </GlobalProvider>
   );
