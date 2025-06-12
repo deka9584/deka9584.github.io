@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/deka9584.github.io/static/css/main.d9d8714b.css",
-    "main.js": "/deka9584.github.io/static/js/main.b02306c4.js",
-    "static/js/453.90a7b0b2.chunk.js": "/deka9584.github.io/static/js/453.90a7b0b2.chunk.js",
-    "static/media/proj-js-snake.png": "/deka9584.github.io/static/media/proj-js-snake.44052a71e58f14529f3b.png",
-    "static/media/proj-ship-battle.png": "/deka9584.github.io/static/media/proj-ship-battle.6254c888beda0d9a8fc5.png",
-    "static/media/code-hero-bg.png": "/deka9584.github.io/static/media/code-hero-bg.593e2f0df50c03d94d14.png",
-    "static/media/proj-tnttag.png": "/deka9584.github.io/static/media/proj-tnttag.04e48a6655996d80286a.png",
-    "static/media/origo-logo.png": "/deka9584.github.io/static/media/origo-logo.dbb8e28cebec40f649fd.png",
-    "static/media/logo_white.svg": "/deka9584.github.io/static/media/logo_white.b022b5ba3ecff5471636fe6710469e99.svg",
-    "index.html": "/deka9584.github.io/index.html",
-    "main.d9d8714b.css.map": "/deka9584.github.io/static/css/main.d9d8714b.css.map",
-    "main.b02306c4.js.map": "/deka9584.github.io/static/js/main.b02306c4.js.map",
-    "453.90a7b0b2.chunk.js.map": "/deka9584.github.io/static/js/453.90a7b0b2.chunk.js.map"
+    "main.css": "/static/css/main.d9d8714b.css",
+    "main.js": "/static/js/main.889cc387.js",
+    "static/js/453.90a7b0b2.chunk.js": "/static/js/453.90a7b0b2.chunk.js",
+    "static/media/proj-js-snake.png": "/static/media/proj-js-snake.44052a71e58f14529f3b.png",
+    "static/media/proj-ship-battle.png": "/static/media/proj-ship-battle.6254c888beda0d9a8fc5.png",
+    "static/media/code-hero-bg.png": "/static/media/code-hero-bg.593e2f0df50c03d94d14.png",
+    "static/media/proj-tnttag.png": "/static/media/proj-tnttag.04e48a6655996d80286a.png",
+    "static/media/origo-logo.png": "/static/media/origo-logo.dbb8e28cebec40f649fd.png",
+    "static/media/logo_white.svg": "/static/media/logo_white.b022b5ba3ecff5471636fe6710469e99.svg",
+    "index.html": "/index.html",
+    "main.d9d8714b.css.map": "/static/css/main.d9d8714b.css.map",
+    "main.889cc387.js.map": "/static/js/main.889cc387.js.map",
+    "453.90a7b0b2.chunk.js.map": "/static/js/453.90a7b0b2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d9d8714b.css",
-    "static/js/main.b02306c4.js"
+    "static/js/main.889cc387.js"
   ]
 }
