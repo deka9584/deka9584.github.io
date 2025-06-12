@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import FadeBackground from "../components/common/FadeBackground";
 import GradientBtn from "../components/common/GradientBtn";
 import PageContainer from "../components/PageContainer";
@@ -55,9 +56,9 @@ function HomePage () {
                     </div>
                 </div>
                 <div className="absolute right-0 bottom-0 m-xl z-10">
-                    <a href={RouteMap.PONG} className="btn bg-black/50 rounded-md">
+                    <Link to={RouteMap.PONG} className="btn bg-black/50 rounded-md">
                         <i className="bi bi-joystick"></i>
-                    </a>
+                    </Link>
                 </div>
             </section>
             <div className="py-12">
