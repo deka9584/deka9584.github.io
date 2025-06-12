@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --body-bg-color: #f3f4f6;
+  --body-text-color: #000000;
+  --box-bg-color: #f3f4f6;
+  --box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.3);
+  --box-text-color: #1d1d1d;
+  --blue-color: #138da5;
+  --white-color: #f3f4f6;
+  --navbar-color: rgba(18, 18, 18, 0.8);
+  --success-color: #39B54A;
+  --alert-color: #e18f00;
+  --danger-color: #bb2000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root[data-theme="dark"] {
+  --body-bg-color: #1d1d1d;
+  --body-text-color: #ffffff;
+  --box-bg-color: #353535;
+  --box-text-color: #dbdbdb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body.burger-open {
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img, object {
+  object-fit: contain;
 }
 
-.App-link {
-  color: #61dafb;
+.box-theme {
+  background-color: var(--box-bg-color);
+  box-shadow: var(--box-shadow);
+  color: var(--box-text-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-default {
+  background-color: var(--box-bg-color);
+  color: var(--box-text-color);
+}
+
+.btn-primary {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+
+.heading-1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.heading-2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.heading-3 {
+  font-size: 18.72px;
+  font-weight: bold;
 }
