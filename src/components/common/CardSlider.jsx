@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import 'swiper/css';
 
-function CardSlider ({ children, className = "" }) {
+function CardSlider ({ children, className = "", loop = false }) {
     const cards = Children.toArray(children);
     
     return (
@@ -24,6 +24,7 @@ function CardSlider ({ children, className = "" }) {
                 1024: { slidesPerView: 3 }
             }}
             centerInsufficientSlides
+            loop={loop}
         >
             {cards.map((item, index) => (
                 <SwiperSlide key={index} style={{ height: "auto" }}>
