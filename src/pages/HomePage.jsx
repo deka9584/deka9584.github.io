@@ -12,6 +12,7 @@ import Popover from "../components/common/Popover";
 import projJsSnake from "../assets/proj-js-snake.png";
 import origoLogo from "../assets/origo-logo.png";
 import projShipBattle from "../assets/proj-ship-battle.png";
+import projTnttag from "../assets/proj-tnttag.png";
 
 function HomePage () {
     const { setFixedHeader } = useGlobalContext();
@@ -62,7 +63,7 @@ function HomePage () {
             <div className="py-12">
                 <section className="py-12" ref={featuredRef}>
                     <h2 className="font-bold px-6 pb-12 text-2xl text-center uppercase">In evidenza</h2>
-                    <div className="px-xl">
+                    <div className="px-xl max-w-7xl mx-auto">
                         <CardSlider>
                             <ProjectCard
                                 imgSrc={projJsSnake}
@@ -101,11 +102,32 @@ function HomePage () {
                                             }
                                             triggerClassName="btn btn-animated text-alert"
                                         >
-                                            <p className="text-sm text-alert font-medium">I servizi back-end del progetto sono stati disattivati</p>
+                                            <p className="text-sm font-medium">
+                                                I servizi back-end, il dominio originale e la versione definitiva front-end del progetto sono stati disattivati. <br />
+                                                Il video mostra il funzionamento originale.
+                                            </p>
                                         </Popover>
                                     </div>
                                     <a href="http://origo.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-md space-x-md">
                                         <span className="font-medium">FE Demo</span>
+                                        <i className="bi bi-box-arrow-up-right"></i>
+                                    </a>
+                                </>}
+                            />
+                            <ProjectCard
+                                imgSrc={projTnttag}
+                                imgAlt="TNT TAG"
+                                content={<>
+                                    <h2 className="h2">TNT TAG</h2>
+                                    <p>Minigame plugin in Java per server Minecraft Spigot</p>
+                                </>}
+                                links={<>
+                                    <a href="https://github.com/PereCraft/TNTTag" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-md space-x-md">
+                                        <i class="bi bi-github"></i>
+                                        <span className="font-medium">Repo</span>
+                                    </a>
+                                    <a href="https://github.com/PereCraft/TNTTag/releases" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-md space-x-md ms-auto">
+                                        <span className="font-medium">Releases</span>
                                         <i className="bi bi-box-arrow-up-right"></i>
                                     </a>
                                 </>}
@@ -136,14 +158,12 @@ function HomePage () {
                     </div>
                 </section>
 
-                <section className="py-12">
+                {/* <section className="py-12">
                     <h2 className="font-bold px-6 pb-12 text-2xl text-center uppercase">Ultimi progetti</h2>
                     <div className="s-wrapper max-w-7xl">
-                        {/* @foreach ($lastworks as $work)
-                            @include('sections.work-card', ['work' => $work])
-                        @endforeach */}
+
                     </div>
-                </section>
+                </section> */}
             </div>
         </PageContainer>
     );
