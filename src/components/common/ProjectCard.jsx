@@ -8,7 +8,7 @@ function ProjectCard ({ imgSrc = "", imgAlt = "", content, links }) {
                 {content}
             </div>
             {links && (
-                <div className="pb-lg px-lg flex flex-wrap justify-between items-center gap-base">
+                <div className="pb-lg px-lg flex flex-wrap justify-between items-end gap-base">
                     {links}
                 </div>
             )}

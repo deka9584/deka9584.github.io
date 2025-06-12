@@ -45,6 +45,10 @@
     @apply bg-dark text-white;
   }
 
+  .btn-outline-primary {
+    @apply border border-lightBlue text-lightBlue;
+  }
+
   .code-hero-bg {
     @apply absolute inset-0 size-full overflow-hidden;
     background-color: #0d1117;
@@ -74,6 +78,14 @@
 
   .pong-game-form input:checked {
     @apply accent-lightBlue;
+  }
+
+  .proj-card-links-left {
+    @apply flex flex-row flex-wrap gap-base items-center flex-1;
+  }
+
+  .proj-card-links-right {
+    @apply flex flex-row flex-wrap gap-base items-center ml-auto;
   }
 
   .ws-header {

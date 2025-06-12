@@ -65,7 +65,7 @@ function HomePage () {
                 <section className="py-12" ref={featuredRef}>
                     <h2 className="font-bold px-6 pb-12 text-2xl text-center uppercase">In evidenza</h2>
                     <div className="px-xl max-w-7xl mx-auto">
-                        <CardSlider>
+                        <CardSlider loop navigation>
                             <ProjectCard
                                 imgSrc={projJsSnake}
                                 imgAlt="JS Snake"
@@ -74,14 +74,18 @@ function HomePage () {
                                     <p>Snake game in JavaScript</p>
                                 </>}
                                 links={<>
-                                    <a href="https://github.com/deka9584/JS-SnakeGame" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-md space-x-md">
-                                        <i class="bi bi-github"></i>
-                                        <span className="font-medium">Repo</span>
-                                    </a>
-                                    <a href="http://snake.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-md space-x-md ms-auto">
-                                        <span className="font-medium">Live</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
+                                    <div className="proj-card-links-left">    
+                                        <a href="https://github.com/deka9584/JS-SnakeGame" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
+                                            <i class="bi bi-github"></i>
+                                            <span className="font-medium">Repo</span>
+                                        </a>
+                                    </div>
+                                    <div className="proj-card-links-right">
+                                        <a href="http://snake.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md ms-auto">
+                                            <span className="font-medium">Live</span>
+                                            <i className="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
                                 </>}
                             />
                             <ProjectCard
@@ -92,27 +96,29 @@ function HomePage () {
                                     <p>Website SEO and Copy tester</p>
                                 </>}
                                 links={<>
-                                    <button type="button" className="btn btn-dark btn-animated rounded-md space-x-md">
-                                        <i className="bi bi-play-fill"></i>
-                                        <span className="font-medium">Video</span>
-                                    </button>
-                                    <div className="ms-auto">
+                                    <div className="proj-card-links-left">
+                                        <button type="button" className="btn btn-dark btn-animated rounded-sm space-x-md">
+                                            <i className="bi bi-play-fill"></i>
+                                            <span className="font-medium">Video</span>
+                                        </button>
+                                    </div>
+                                    <div className="proj-card-links-right">
                                         <Popover
                                             triggerContent={
                                                 <i className="bi bi-exclamation-circle"></i>
                                             }
-                                            triggerClassName="btn btn-animated text-alert"
+                                            triggerClassName="btn btn-animated text-alert p-sm"
                                         >
                                             <p className="text-sm font-medium">
                                                 I servizi back-end, il dominio originale e la versione definitiva front-end del progetto sono stati disattivati. <br />
                                                 Il video mostra il funzionamento originale.
                                             </p>
                                         </Popover>
+                                        <a href="http://origo.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md">
+                                            <span className="font-medium">FE Demo</span>
+                                            <i className="bi bi-box-arrow-up-right"></i>
+                                        </a>
                                     </div>
-                                    <a href="http://origo.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-md space-x-md">
-                                        <span className="font-medium">FE Demo</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
                                 </>}
                             />
                             <ProjectCard
@@ -123,14 +129,18 @@ function HomePage () {
                                     <p>Minigame plugin in Java per server Minecraft Spigot</p>
                                 </>}
                                 links={<>
-                                    <a href="https://github.com/PereCraft/TNTTag" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-md space-x-md">
-                                        <i class="bi bi-github"></i>
-                                        <span className="font-medium">Repo</span>
-                                    </a>
-                                    <a href="https://github.com/PereCraft/TNTTag/releases" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-md space-x-md ms-auto">
-                                        <span className="font-medium">Releases</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
+                                    <div className="proj-card-links-left">
+                                        <a href="https://github.com/PereCraft/TNTTag" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
+                                            <i class="bi bi-github"></i>
+                                            <span className="font-medium">Repo</span>
+                                        </a>
+                                    </div>
+                                    <div className="proj-card-links-right">
+                                        <a href="https://github.com/PereCraft/TNTTag/releases" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md ms-auto">
+                                            <span className="font-medium">Releases</span>
+                                            <i className="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
                                 </>}
                             />
                             <ProjectCard
@@ -141,18 +151,22 @@ function HomePage () {
                                     <p>Ship Battle in JS (client + server)</p>
                                 </>}
                                 links={<>
-                                    <a href="https://github.com/deka9584/shipbattle_client" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-md space-x-md">
-                                        <i class="bi bi-github"></i>
-                                        <span className="font-medium">Repo Client</span>
-                                    </a>
-                                    <a href="https://github.com/deka9584/shipbattle_server" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-md space-x-md">
-                                        <i class="bi bi-github"></i>
-                                        <span className="font-medium">Repo Server</span>
-                                    </a>
-                                    <a href="http://ships.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-md space-x-md ms-auto">
-                                        <span className="font-medium">Client Demo</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
+                                    <div className="proj-card-links-left">
+                                        <a href="https://github.com/deka9584/shipbattle_client" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
+                                            <i class="bi bi-github"></i>
+                                            <span className="font-medium">Repo Client</span>
+                                        </a>
+                                        <a href="https://github.com/deka9584/shipbattle_server" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
+                                            <i class="bi bi-github"></i>
+                                            <span className="font-medium">Repo Server</span>
+                                        </a>
+                                    </div>
+                                    <div className="proj-card-links-right">
+                                        <a href="http://ships.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md">
+                                            <span className="font-medium">Client Demo</span>
+                                            <i className="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </div>
                                 </>}
                             />
                         </CardSlider>
