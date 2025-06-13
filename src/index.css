@@ -58,6 +58,14 @@
     @apply absolute top-1/2 -translate-y-1/2 inset-x-0 m-auto opacity-10;
   }
 
+  .skills-list {
+    @apply flex flex-col;
+  }
+
+  .skills-list li {
+    @apply px-lg py-xl border-t border-darkGray last:border-b text-xl text-gray-300 hover:text-white;
+  }
+
   .pong-game-container {
     --gap-header-heigth: 0px;
     @apply w-full;
