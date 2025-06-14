@@ -49,7 +49,7 @@ function HomePage () {
                             <span>In evidenza</span>
                             <i className="bi bi-arrow-down"></i>
                         </button>
-                        <GradientBtn textClass="space-x-md bg-black/50 font-semibold" gradientClass="from-lightBlue to-purple opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <GradientBtn href={RouteMap.PROJECTS} textClass="space-x-md bg-black/50 font-semibold" gradientClass="from-lightBlue to-purple opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                             <span>Progetti</span>
                             <i className="bi bi-arrow-right"></i>
                         </GradientBtn>
@@ -62,7 +62,7 @@ function HomePage () {
                 </div>
             </section>
             <section className="py-12" ref={featuredRef}>
-                <h2 className="font-bold px-6 mb-12 text-2xl text-center uppercase">In evidenza</h2>
+                <h2 className="h1 px-6 mb-12 text-center uppercase">In evidenza</h2>
                 <div className="px-xl max-w-7xl mx-auto">
                     <CardSlider className="select-none" loop navigation>
                         <ProjectCard
@@ -172,7 +172,7 @@ function HomePage () {
                 </div>
             </section>
             <section className="py-12">
-                <h2 className="font-bold px-6 mb-12 text-2xl text-center uppercase">Skills</h2>
+                <h2 className="h1 px-6 mb-12 text-center uppercase">Skills</h2>
                 <div className="px-xl max-w-7xl mx-auto space-y-20">
                     <div className="relative flex flex-col sm:flex-row">
                         <div className="flex-1 sm:sticky sm:top-20 py-xl h-full">

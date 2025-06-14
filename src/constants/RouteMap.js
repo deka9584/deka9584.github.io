@@ -1,6 +1,7 @@
 const RouteMap = {
     HOME: "/",
-    PONG: "/pong"
+    PONG: "/pong",
+    PROJECTS: "/projects"
 }
 
 export default RouteMap;
