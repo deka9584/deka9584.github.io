@@ -171,7 +171,7 @@ function HomePage () {
                     </CardSlider>
                 </div>
             </section>
-            <section className="py-12" ref={featuredRef}>
+            <section className="py-12">
                 <h2 className="font-bold px-6 mb-12 text-2xl text-center uppercase">Skills</h2>
                 <div className="px-xl max-w-7xl mx-auto space-y-20">
                     <div className="relative flex flex-col sm:flex-row">
