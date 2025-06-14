@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.df4d1c37.css",
-    "main.js": "/static/js/main.e125920b.js",
+    "main.css": "/static/css/main.e7566127.css",
+    "main.js": "/static/js/main.70de002a.js",
     "static/js/453.90a7b0b2.chunk.js": "/static/js/453.90a7b0b2.chunk.js",
     "static/media/proj-js-snake.png": "/static/media/proj-js-snake.44052a71e58f14529f3b.png",
     "static/media/proj-ship-battle.png": "/static/media/proj-ship-battle.6254c888beda0d9a8fc5.png",
@@ -10,12 +10,12 @@
     "static/media/origo-logo.png": "/static/media/origo-logo.dbb8e28cebec40f649fd.png",
     "static/media/logo_white.svg": "/static/media/logo_white.b022b5ba3ecff5471636fe6710469e99.svg",
     "index.html": "/index.html",
-    "main.df4d1c37.css.map": "/static/css/main.df4d1c37.css.map",
-    "main.e125920b.js.map": "/static/js/main.e125920b.js.map",
+    "main.e7566127.css.map": "/static/css/main.e7566127.css.map",
+    "main.70de002a.js.map": "/static/js/main.70de002a.js.map",
     "453.90a7b0b2.chunk.js.map": "/static/js/453.90a7b0b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df4d1c37.css",
-    "static/js/main.e125920b.js"
+    "static/css/main.e7566127.css",
+    "static/js/main.70de002a.js"
   ]
 }
