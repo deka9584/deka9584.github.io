@@ -184,11 +184,12 @@ function HomePage () {
                             <ul className="skills-list">
                                 <li>JavaScript vanilla</li>
                                 <li>React</li>
-                                <li>TailwindCss</li>
+                                <li>TailwindCSS</li>
                                 <li>Bootstrap</li>
-                                <li>TypeScript</li>
                                 <li>JQuery</li>
+                                <li>TypeScript</li>
                                 <li>Shopify Liquid</li>
+                                <li>InertiaJS</li>
                             </ul>
                         </div>
                     </div>
