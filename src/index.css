@@ -108,6 +108,10 @@
     content: "";
     z-index: -1;
   }
+
+  .video-controls {
+    @apply px-md py-sm m-base bg-dark/50 flex gap-md rounded-md;
+  }
 }
 
 body {
@@ -117,6 +121,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 code {
