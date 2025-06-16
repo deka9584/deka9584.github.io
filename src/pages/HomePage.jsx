@@ -9,11 +9,14 @@ import { useEffect, useRef } from "react";
 import CardSlider from "../components/common/CardSlider";
 import ProjectCard from "../components/common/ProjectCard";
 import Popover from "../components/common/Popover";
+import VideoModal from "../components/modals/VideoModal";
 
 import projJsSnake from "../assets/proj-js-snake.png";
 import origoLogo from "../assets/origo-logo.png";
 import projShipBattle from "../assets/proj-ship-battle.png";
 import projTnttag from "../assets/proj-tnttag.png";
+import origoVideo from "../assets/origo-video.mov";
+import NiceModal from "@ebay/nice-modal-react";
 
 function HomePage () {
     const { setFixedHeader } = useGlobalContext();
@@ -96,7 +99,7 @@ function HomePage () {
                             </>}
                             links={<>
                                 <div className="proj-card-links-left">
-                                    <button type="button" className="btn btn-dark btn-animated rounded-sm space-x-md">
+                                    <button type="button" onClick={() => NiceModal.show(VideoModal, { src: origoVideo })} className="btn btn-dark btn-animated rounded-sm space-x-md">
                                         <i className="bi bi-play-fill"></i>
                                         <span className="font-medium">Video</span>
                                     </button>
