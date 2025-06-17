@@ -7,12 +7,14 @@ class FadeEffect extends HTMLElement {
         this.targetElement = this.dataset.target ? this.closest(this.dataset.target) : null;
         this.colorRgb = this.dataset.colorRgb;
         this.accelerometer = null;
+        this.listeningDeviceMotion = false;
         this.acceleration = { x: 0, y: 0 };
 
         this.window_resizeHandler = () => this.updateCanvasSize();
         this.mouseMoveHandler = (e) => this.addCircle(e.clientX, e.clientY + window.scrollY);
-        this.touchMoveHandler = (e) => this.addCircle(e.touches[0].clientX, e.touches[0].clientY + window.scrollY);
+        this.touchMoveHandler = (e) => this.onTouchMove(e.touches);
         this.acl_readingHandler = () => this.updateFromAccelerometer();
+        this.deviceMotion_handler = (e) => this.updateFromDeviceMotion(e.accelerationIncludingGravity);
 
         if (!this.targetElement) {
             this.targetElement = this.canvas;
@@ -29,9 +31,7 @@ class FadeEffect extends HTMLElement {
             this.accelerometer = this.setupAccelerometer();
         }
         
-        if (!this.accelerometer) {
-            this.targetElement.addEventListener("touchmove", this.touchMoveHandler);
-        }
+        this.targetElement.addEventListener("touchmove", this.touchMoveHandler);
     }
 
     disconnectedCallback () {
@@ -40,8 +40,12 @@ class FadeEffect extends HTMLElement {
 
         if (this.accelerometer) {
             this.stopAccelerometer();
-        } else {
-            this.targetElement.removeEventListener("touchmove", this.touchMoveHandler);
+        }
+
+        this.targetElement.removeEventListener("touchmove", this.touchMoveHandler);
+
+        if (this.listeningDeviceMotion) {
+            this.stopDeviceMotionListener();
         }
     }
 
@@ -56,15 +60,50 @@ class FadeEffect extends HTMLElement {
         return canvas;
     }
 
-    setupAccelerometer () {
-        try {
-            if (!("Accelerometer" in window)) {
-                throw new Error("Accelerometer is not available");
+    onTouchMove (touches) {
+        if (this.accelerometer || this.listeningDeviceMotion) return;
+
+        for (const touch of touches) {
+            this.addCircle(touch.clientX, touch.clientY + window.scrollY);
+        }
+    }
+
+    toggleDeviceMotion () {
+        if (this.accelerometer) {
+            this.stopAccelerometer();
+            this.accelerometer = null;
+            return;
+        }
+
+        if (this.listeningDeviceMotion) {
+            this.stopDeviceMotionListener();
+            return;
+        }
+
+        if (window.DeviceMotionEvent) {
+            if (!DeviceMotionEvent.requestPermission) {
+                this.accelerometer = this.setupAccelerometer();
+                return;
             }
 
-            const acl = new window.Accelerometer({
-                frequency: 60
-            });
+            DeviceMotionEvent.requestPermission()
+                .then(result => {
+                    if (result === "granted") {
+                        this.setupDeviceMotionListener();
+                    }
+                })
+                .catch(err => console.error(err));
+        }
+    }
+
+    setupAccelerometer () {
+        if (!("Accelerometer" in window)) {
+            console.error("Accelerometer is not available");
+            return null;
+        }
+
+        try {
+            const acl = new window.Accelerometer({ frequency: 60 });
 
             acl.addEventListener("reading", this.acl_readingHandler);                
             acl.start();
@@ -77,6 +116,11 @@ class FadeEffect extends HTMLElement {
         return null;
     }
 
+    setupDeviceMotionListener () {
+        window.addEventListener("devicemotion", this.deviceMotion_handler);
+        this.listeningDeviceMotion = true;
+    }
+
     stopAccelerometer () {
         try {
             this.accelerometer.removeEventListener("reading", this.acl_readingHandler);
@@ -84,6 +128,11 @@ class FadeEffect extends HTMLElement {
         } catch (error) {
             console.error("Accelerometer error:", error);
         }
+    }
+
+    stopDeviceMotionListener () {
+        window.removeEventListener("devicemotion", this.deviceMotion_handler);
+        this.listeningDeviceMotion = false;
     }
 
     updateFromAccelerometer () {
@@ -94,6 +143,13 @@ class FadeEffect extends HTMLElement {
         const centerY = this.canvas.height / 2 - this.acceleration.y - 800;
 
         this.addCircle(centerX, centerY);
+    }
+
+    updateFromDeviceMotion (acceleration) {
+        // acceleration.x
+        // acceleration.y
+        // acceleration.z
+        console.log(acceleration);
     }
 
     updateCanvasSize() {
