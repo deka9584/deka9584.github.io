@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.e54ccd02.css",
-    "main.js": "/static/js/main.fd27de2d.js",
+    "main.css": "/static/css/main.650a5b3c.css",
+    "main.js": "/static/js/main.77d3d7c6.js",
     "static/js/453.90a7b0b2.chunk.js": "/static/js/453.90a7b0b2.chunk.js",
     "static/media/origo-video.mov": "/static/media/origo-video.d008293a2092fb1775ac.mov",
     "static/media/proj-js-snake.png": "/static/media/proj-js-snake.44052a71e58f14529f3b.png",
     "static/media/proj-ship-battle.png": "/static/media/proj-ship-battle.6254c888beda0d9a8fc5.png",
     "static/media/code-hero-bg.png": "/static/media/code-hero-bg.593e2f0df50c03d94d14.png",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/proj-tnttag.png": "/static/media/proj-tnttag.04e48a6655996d80286a.png",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "static/media/origo-logo.png": "/static/media/origo-logo.dbb8e28cebec40f649fd.png",
     "static/media/logo_white.svg": "/static/media/logo_white.b022b5ba3ecff5471636fe6710469e99.svg",
     "index.html": "/index.html",
     "static/media/loader-spinner.svg": "/static/media/loader-spinner.3450b037c0448864fcc5ec3e4cfcef3e.svg",
-    "main.e54ccd02.css.map": "/static/css/main.e54ccd02.css.map",
-    "main.fd27de2d.js.map": "/static/js/main.fd27de2d.js.map",
+    "main.650a5b3c.css.map": "/static/css/main.650a5b3c.css.map",
+    "main.77d3d7c6.js.map": "/static/js/main.77d3d7c6.js.map",
     "453.90a7b0b2.chunk.js.map": "/static/js/453.90a7b0b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e54ccd02.css",
-    "static/js/main.fd27de2d.js"
+    "static/css/main.650a5b3c.css",
+    "static/js/main.77d3d7c6.js"
   ]
 }
