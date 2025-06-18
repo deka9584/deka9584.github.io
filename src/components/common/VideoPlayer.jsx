@@ -41,7 +41,7 @@ function VideoPlayer ({ src, showProgressbar = false, autoplay = false, autoHide
         const current = videoRef.current.currentTime || 0;
         const duration = videoRef.current.duration || 0;
         const percentage = (current / duration) * 100;
-        setProgress(percentage);
+        setProgress(Math.round(percentage));
     }
 
     const handleProgressClick = (event) => {
