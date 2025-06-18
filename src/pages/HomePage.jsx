@@ -61,7 +61,7 @@ function HomePage () {
                     </div>
                 </div>
                 <div className="absolute right-0 bottom-0 m-xl z-10">
-                    <Link to={RouteMap.PONG} className="btn bg-black/50 rounded-md">
+                    <Link to={RouteMap.PONG} className="btn bg-black/50 rounded-sm">
                         <i className="bi bi-joystick"></i>
                     </Link>
                 </div>

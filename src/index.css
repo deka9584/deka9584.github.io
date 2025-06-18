@@ -32,7 +32,7 @@
     @apply transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95;
   }
 
-  .btn[disabled],
+  .btn:disabled,
   .btn-disabled {
     opacity: .6;
   }
@@ -102,7 +102,7 @@
   }
 
   .video-controls {
-    @apply px-md py-sm m-base bg-dark/50 flex gap-md rounded-md;
+    @apply px-md py-sm m-base bg-dark/50 flex gap-md rounded-sm;
   }
 }
 
@@ -115,7 +115,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body:has(dialog[open]) {
+body:has(dialog:open) {
   overflow: hidden;
 }
 
