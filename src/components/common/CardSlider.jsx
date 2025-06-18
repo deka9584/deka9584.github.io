@@ -1,7 +1,6 @@
 import { Children, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import 'swiper/css';
 
 function CardSlider ({ children, className = "", loop = false, pagination = false, navigation = false }) {
     const cards = Children.toArray(children);
