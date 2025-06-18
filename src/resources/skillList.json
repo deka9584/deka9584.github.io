@@ -22,5 +22,24 @@
             "Firebase",
             "API Rest e GraphQL"
         ]
+    },
+    {
+        "name": "Mobile Development",
+        "items": [
+            "Native iOS (Swift + SwiftUI)",
+            "Native Android (Kotlin/Java)"
+        ]
+    },
+    {
+        "name": "Software",
+        "items": [
+            "Adobe Creative Suite",
+            "Figma",
+            "Unity",
+            "Max",
+            "Visual Studio",
+            "Visual Studio Code",
+            "Git"
+        ]
     }
 ]
