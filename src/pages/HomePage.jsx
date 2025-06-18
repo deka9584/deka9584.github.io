@@ -190,7 +190,7 @@ function HomePage () {
                                 <ul className="skills-list">
                                     {group.items.map((item, j) => (
                                         <li key={j} className="px-lg py-xl border-t border-darkGray last:border-b text-xl group">
-                                            <span className="opacity-75 group-hover:opacity-100">{item}</span>
+                                            <span className="opacity-75 sm:group-hover:opacity-100">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
