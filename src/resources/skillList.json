@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Front-End Development",
+        "items": [
+            "JavaScript Vanilla",
+            "React",
+            "TailwinCSS",
+            "Bootstrap",
+            "JQuery",
+            "TypeScript",
+            "Shopify Liquid",
+            "InertiaJS"
+        ]
+    },
+    {
+        "name": "Back-End Development",
+        "items": [
+            "PHP",
+            "Laravel",
+            "NodeJS",
+            "ExpressJS",
+            "Firebase",
+            "API Rest e GraphQL"
+        ]
+    }
+]

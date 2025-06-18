@@ -10,13 +10,15 @@ import CardSlider from "../components/common/CardSlider";
 import ProjectCard from "../components/common/ProjectCard";
 import Popover from "../components/common/Popover";
 import VideoModal from "../components/modals/VideoModal";
+import NiceModal from "@ebay/nice-modal-react";
 
 import projJsSnake from "../assets/proj-js-snake.png";
 import origoLogo from "../assets/origo-logo.png";
 import projShipBattle from "../assets/proj-ship-battle.png";
 import projTnttag from "../assets/proj-tnttag.png";
 import origoVideo from "../assets/origo-video.mov";
-import NiceModal from "@ebay/nice-modal-react";
+
+import skillsList from "../resources/skillList.json";
 
 function HomePage () {
     const { setFixedHeader } = useGlobalContext();
@@ -177,42 +179,24 @@ function HomePage () {
             <section className="py-12">
                 <h2 className="h1 px-6 mb-12 text-center uppercase">Skills</h2>
                 <div className="px-xl max-w-7xl mx-auto space-y-20">
-                    <div className="relative flex flex-col sm:flex-row">
-                        <div className="flex-1 sm:sticky sm:top-20 py-xl h-full">
-                            <h3 className="text-3xl text-center sm:text-start">
-                                <span className="border-b border-white">Front-End Development</span>
-                            </h3>
+                    {skillsList.map((group, i) => (
+                        <div key={i} className="relative flex flex-col sm:flex-row">
+                            <div className="flex-1 sm:sticky sm:top-20 py-xl h-full">
+                                <h3 className="text-3xl text-center sm:text-start">
+                                    <span className="border-b border-white">{group.name}</span>
+                                </h3>
+                            </div>
+                            <div className="flex-1">
+                                <ul className="skills-list">
+                                    {group.items.map((item, j) => (
+                                        <li key={j} className="px-lg py-xl border-t border-darkGray last:border-b text-xl group">
+                                            <span className="opacity-75 group-hover:opacity-100">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                        <div className="flex-1">
-                            <ul className="skills-list">
-                                <li>JavaScript vanilla</li>
-                                <li>React</li>
-                                <li>TailwindCSS</li>
-                                <li>Bootstrap</li>
-                                <li>JQuery</li>
-                                <li>TypeScript</li>
-                                <li>Shopify Liquid</li>
-                                <li>InertiaJS</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="relative flex flex-col sm:flex-row">
-                        <div className="flex-1 sm:sticky sm:top-20 py-xl h-full">
-                            <h3 className="text-3xl text-center sm:text-start">
-                                <span className="border-b border-white">Back-End Development</span>
-                            </h3>
-                        </div>
-                        <div className="flex-1">
-                            <ul className="skills-list">
-                                <li>PHP</li>
-                                <li>Laravel</li>
-                                <li>NodeJS</li>
-                                <li>ExpressJS</li>
-                                <li>Firebase</li>
-                                <li>API Rest e GraphQL</li>
-                            </ul>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
         </PageContainer>
