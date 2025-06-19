@@ -18,7 +18,7 @@ const VideoModal = NiceModal.create(({ src }) => {
 
     return (
         <div className="fixed inset-0 size-full bg-black/75 z-30">
-            <dialog className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark text-white shadow w-full max-w-3xl" open>
+            <dialog className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 m-0 bg-dark text-white shadow w-full max-w-3xl" open>
                 <button type="button" className="video-controls absolute top-0 right-0 z-10" onClick={() => modal.remove()}>
                     <i className="bi bi-x-lg"></i>
                 </button>
