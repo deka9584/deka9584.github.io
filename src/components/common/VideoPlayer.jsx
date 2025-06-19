@@ -11,9 +11,8 @@ function VideoPlayer ({ src, showProgressbar = false, autoplay = false, autoHide
     const videoRef = useRef();
 
     const togglePlayPause = () => {
-        if (videoRef.current) {
-            isPaused ? videoRef.current.play() : videoRef.current.pause();
-        }
+        if (!videoRef.current) return;
+        videoRef.current.paused ? videoRef.current.play() : videoRef.current.pause();
     }
 
     const showFullscreen = () => {
