@@ -115,10 +115,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body:has(dialog:open) {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 code {
