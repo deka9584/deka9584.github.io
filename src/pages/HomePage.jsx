@@ -54,7 +54,7 @@ function HomePage () {
                             <span>In evidenza</span>
                             <i className="bi bi-arrow-down"></i>
                         </button>
-                        <GradientBtn href={RouteMap.PROJECTS} textClass="space-x-md bg-black/50 font-semibold" gradientClass="from-lightBlue to-purple opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <GradientBtn type="button" href={RouteMap.PROJECTS} textClass="space-x-md bg-black/50 font-semibold" gradientClass="from-lightBlue to-purple opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                             <span>Progetti</span>
                             <i className="bi bi-arrow-right"></i>
                         </GradientBtn>
@@ -187,7 +187,7 @@ function HomePage () {
                                 </h3>
                             </div>
                             <div className="flex-1">
-                                <ul className="skills-list">
+                                <ul>
                                     {group.items.map((item, j) => (
                                         <li key={j} className="px-lg py-xl border-t border-darkGray last:border-b text-xl group">
                                             <span className="opacity-75 sm:group-hover:opacity-100">{item}</span>
