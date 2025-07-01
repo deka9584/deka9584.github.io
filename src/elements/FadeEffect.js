@@ -8,7 +8,6 @@ class FadeEffect extends HTMLElement {
         this.colorRgb = this.dataset.colorRgb;
         this.accelerometer = null;
         this.listeningDeviceMotion = false;
-        this.acceleration = { x: 0, y: 0 };
 
         this.window_resizeHandler = () => this.updateCanvasSize();
         this.mouseMoveHandler = (e) => this.addCircle(e.clientX, e.clientY + window.scrollY);
@@ -136,20 +135,18 @@ class FadeEffect extends HTMLElement {
     }
 
     updateFromAccelerometer () {
-        this.acceleration.x = -this.accelerometer.x * 100;
-        this.acceleration.y = -this.accelerometer.y * 100;
+        const aclX = -this.accelerometer.x * 100;
+        const aclY = -this.accelerometer.y * 100;
         
-        const centerX = this.canvas.width / 2 + this.acceleration.x;
-        const centerY = this.canvas.height / 2 - this.acceleration.y - 800;
+        const centerX = this.canvas.width / 2 + aclX;
+        const centerY = this.canvas.height / 2 - aclY - 800;
 
         this.addCircle(centerX, centerY);
     }
 
     updateFromDeviceMotion (acceleration) {
-        // acceleration.x
-        // acceleration.y
-        // acceleration.z
-        console.log(acceleration);
+        // TO-DO
+        console.log("TO-DO: updateFromDeviceMotion", acceleration);
     }
 
     updateCanvasSize() {
@@ -183,7 +180,8 @@ class FadeEffect extends HTMLElement {
 
         for (let i = this.circles.length - 1; i >= 0; i--) {
             const circle = this.circles[i];
-            Date.now() - circle.startTime > this.fadeDuration ? this.circles.splice(i, 1) : this.drawCircle(circle);
+            const isFadeEnded = Date.now() - circle.startTime > this.fadeDuration;
+            isFadeEnded ? this.circles.splice(i, 1) : this.drawCircle(circle);
         }
 
         requestAnimationFrame(this.animate.bind(this));

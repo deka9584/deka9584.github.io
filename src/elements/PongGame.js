@@ -57,8 +57,6 @@ class PongGame extends HTMLElement {
             default:
                 break;
         }
-
-        console.log(name, oldValue, newValue);
     }
 
     checkPadCollision () {
