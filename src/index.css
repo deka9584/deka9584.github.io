@@ -20,10 +20,7 @@
   }
 
   .app-container {
-    @apply bg-dark text-white min-h-screen cursor-default;
-    position: relative;
-    display: block;
-    z-index: 1;
+    @apply block bg-dark text-white min-h-screen cursor-default;
   }
 
   .btn {
@@ -36,7 +33,7 @@
 
   .btn:disabled,
   .btn-disabled {
-    opacity: .6;
+    @apply opacity-50;
   }
 
   .btn-primary {
