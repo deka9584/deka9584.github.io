@@ -4,7 +4,7 @@ class FadeEffect extends HTMLElement {
         this.context = this.canvas.getContext("2d");
         this.circles = [];
         this.fadeDuration = 2e3;
-        this.targetElement = this.dataset.target ? this.closest(this.dataset.target) : null;
+        this.target = this.dataset.target ? this.closest(this.dataset.target) : this.canvas;
         this.colorRgb = this.dataset.colorRgb;
         this.accelerometer = null;
         this.listeningDeviceMotion = false;
@@ -15,33 +15,29 @@ class FadeEffect extends HTMLElement {
         this.acl_readingHandler = () => this.updateFromAccelerometer();
         this.deviceMotion_handler = (e) => this.updateFromDeviceMotion(e.accelerationIncludingGravity);
 
-        if (!this.targetElement) {
-            this.targetElement = this.canvas;
-        }
-
         window.addEventListener("resize", this.window_resizeHandler);
 
         this.updateCanvasSize();
         
         this.animate();
-        this.targetElement.addEventListener("mousemove", this.mouseMoveHandler);
+        this.target.addEventListener("mousemove", this.mouseMoveHandler);
 
         if (window.DeviceMotionEvent && !DeviceMotionEvent.requestPermission) {
             this.accelerometer = this.setupAccelerometer();
         }
         
-        this.targetElement.addEventListener("touchmove", this.touchMoveHandler);
+        this.target.addEventListener("touchmove", this.touchMoveHandler);
     }
 
     disconnectedCallback () {
         window.removeEventListener("resize", this.window_resizeHandler);
-        this.targetElement.removeEventListener("mouseover", this.mouseMoveHandler);
+        this.target.removeEventListener("mouseover", this.mouseMoveHandler);
 
         if (this.accelerometer) {
             this.stopAccelerometer();
         }
 
-        this.targetElement.removeEventListener("touchmove", this.touchMoveHandler);
+        this.target.removeEventListener("touchmove", this.touchMoveHandler);
 
         if (this.listeningDeviceMotion) {
             this.stopDeviceMotionListener();

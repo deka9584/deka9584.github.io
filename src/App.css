@@ -33,16 +33,6 @@ img, object {
   color: var(--box-text-color);
 }
 
-.btn-default {
-  background-color: var(--box-bg-color);
-  color: var(--box-text-color);
-}
-
-.btn-primary {
-  background-color: var(--blue-color);
-  color: var(--white-color);
-}
-
 .heading-1 {
   font-size: 32px;
   font-weight: bold;

@@ -34,12 +34,11 @@ function VideoPlayer ({ src, showProgressbar = false, autoplay = false, autoHide
         setIsLoading(false);
     }
 
-    const handleTimeUpdate = () => {
-        if (!showProgressbar || !videoRef.current) return;
-
-        const current = videoRef.current.currentTime || 0;
-        const duration = videoRef.current.duration || 0;
+    const handleTimeUpdate = (event) => {
+        const current = event.target.currentTime || 0;
+        const duration = event.target.duration || 0;
         const percentage = (current / duration) * 100;
+        
         setProgress(Math.round(percentage));
     }
 

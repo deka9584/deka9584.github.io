@@ -14,7 +14,7 @@ const VideoModal = NiceModal.create(({ src }) => {
 
         window.addEventListener("keydown", keydownHandler);
         return () => window.removeEventListener("keydown", keydownHandler);
-    });
+    }, []);
 
     return (
         <div className="fixed inset-0 size-full bg-black/75 z-30">

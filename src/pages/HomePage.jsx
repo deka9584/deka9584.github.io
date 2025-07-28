@@ -80,7 +80,7 @@ function HomePage () {
                             links={<>
                                 <div className="proj-card-links-left">    
                                     <a href="https://github.com/deka9584/JS-SnakeGame" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i class="bi bi-github"></i>
+                                        <i className="bi bi-github"></i>
                                         <span className="font-medium">Repo</span>
                                     </a>
                                 </div>
@@ -135,7 +135,7 @@ function HomePage () {
                             links={<>
                                 <div className="proj-card-links-left">
                                     <a href="https://github.com/PereCraft/TNTTag" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i class="bi bi-github"></i>
+                                        <i className="bi bi-github"></i>
                                         <span className="font-medium">Repo</span>
                                     </a>
                                 </div>
@@ -157,11 +157,11 @@ function HomePage () {
                             links={<>
                                 <div className="proj-card-links-left">
                                     <a href="https://github.com/deka9584/shipbattle_client" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i class="bi bi-github"></i>
+                                        <i className="bi bi-github"></i>
                                         <span className="font-medium">Repo Client</span>
                                     </a>
                                     <a href="https://github.com/deka9584/shipbattle_server" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i class="bi bi-github"></i>
+                                        <i className="bi bi-github"></i>
                                         <span className="font-medium">Repo Server</span>
                                     </a>
                                 </div>
