@@ -57,6 +57,10 @@
     @apply absolute top-1/2 -translate-y-1/2 inset-x-0 m-auto opacity-10;
   }
 
+  .nav-link {
+    @apply inline-block align-middle relative overflow-hidden active:opacity-55 transition-opacity after:absolute after:inset-x-0 after:bottom-0 after:bg-white after:h-px after:-translate-x-full after:transition-transform hover:after:translate-x-0;
+  }
+
   .pong-game-container {
     --gap-header-heigth: 0px;
     @apply w-full;

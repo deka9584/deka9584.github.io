@@ -35,6 +35,7 @@ function CardSlider ({ children, className = "", loop = false, pagination = fals
             }}
             centerInsufficientSlides
             loop={loop}
+            maxBackfaceHiddenSlides={0}
         >
             {cards.map((item, index) => (
                 <SwiperSlide key={index} style={{ height: "auto" }}>

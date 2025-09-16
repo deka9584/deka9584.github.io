@@ -36,7 +36,7 @@ function Popover ({ children, triggerContent, triggerClassName = "", placement =
   return (
     <div>
         {show && (
-            <div ref={popoverRef} style={styles.popper} {...attributes.popper} className='z-10'>
+            <div ref={popoverRef} style={styles.popper} {...attributes.popper} className='z-10 fixed'>
                 <div className='px-lg py-base shadow bg-dark border border-white rounded-sm'>
                     {children}
                 </div>

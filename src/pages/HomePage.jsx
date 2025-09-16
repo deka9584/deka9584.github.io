@@ -118,10 +118,6 @@ function HomePage () {
                                             Il video mostra il funzionamento originale.
                                         </p>
                                     </Popover>
-                                    <a href="http://origo.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md">
-                                        <span className="font-medium">FE Demo</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
                                 </div>
                             </>}
                         />

@@ -40,7 +40,14 @@ function WsHeader () {
                         <ReactSVG src={logo} className="w-44 sm:w-52"/>
                     </Link>
                 </div>
-                <ul className="flex-1"></ul>
+                <ul className="flex-1 px-xl hidden sm:flex gap-lg">
+                    <li>
+                        <Link to={RouteMap.HOME} className="nav-link">Home</Link>
+                    </li>
+                    <li>
+                        <Link to={RouteMap.PROJECTS} className="nav-link">Progetti</Link>
+                    </li>
+                </ul>
                 <div className="flex items-center gap-lg px-lg sm:px-xl lg:px-2xl">
                     <a href="https://github.com/deka9584" target="_blank" rel="noreferrer">
                         <i className="bi bi-github" aria-label="GitHub"></i>
