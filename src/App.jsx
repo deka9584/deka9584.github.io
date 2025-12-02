@@ -7,6 +7,7 @@ import RouteMap from './constants/RouteMap';
 import PongPage from './pages/PongPage';
 import WsFooter from './components/WsFooter';
 import ProjectsPage from './pages/ProjectsPage';
+// import CursorEffect from './components/common/CursorEffect';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path={RouteMap.PROJECTS} element={<ProjectsPage />} />
         </Routes>
         <WsFooter/>
+        {/* <CursorEffect/> */}
       </div>
     </GlobalProvider>
   );
