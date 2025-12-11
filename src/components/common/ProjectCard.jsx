@@ -1,6 +1,6 @@
 function ProjectCard ({ imgSrc = "", imgAlt = "", content, links }) {
     return (
-        <div className="h-full flex flex-col bg-darkGray shadow">
+        <div className="h-full flex flex-col bg-darkGray shadow cursor-plus">
             <figure className="h-64 bg-gray-300">
                 <img src={imgSrc} alt={imgAlt} className="size-full object-cover" />
             </figure>

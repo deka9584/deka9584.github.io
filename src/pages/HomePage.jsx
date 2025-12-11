@@ -1,17 +1,17 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context/Context";
 import FadeBackground from "../components/common/FadeBackground";
 import GradientBtn from "../components/common/GradientBtn";
 import PageContainer from "../components/PageContainer";
-import codeHeroBg from "../assets/code-hero-bg.png";
 import RouteMap from "../constants/RouteMap";
-import { useGlobalContext } from "../context/Context";
-import { useEffect, useRef } from "react";
 import CardSlider from "../components/common/CardSlider";
 import ProjectCard from "../components/common/ProjectCard";
 import Popover from "../components/common/Popover";
 import VideoModal from "../components/modals/VideoModal";
 import NiceModal from "@ebay/nice-modal-react";
 
+import codeHeroBg from "../assets/code-hero-bg.png";
 import projJsSnake from "../assets/proj-js-snake.png";
 import origoLogo from "../assets/origo-logo.png";
 import projShipBattle from "../assets/proj-ship-battle.png";

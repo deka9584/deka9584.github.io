@@ -25,7 +25,6 @@ function CardSlider ({ children, className = "", loop = false, pagination = fals
                 clickableClass: "flex justify-center gap-md mt-xl",
                 lockClass: "hidden",
             }}
-            wrapperClass="cursor-plus"
             onSwiper={(swiper) => swiperRef.current = swiper }
             className={className}
             slidesPerView={1}
