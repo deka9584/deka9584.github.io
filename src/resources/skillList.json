@@ -19,7 +19,6 @@
             "Laravel",
             "NodeJS",
             "ExpressJS",
-            "Firebase",
             "API Rest e GraphQL"
         ]
     },
@@ -28,6 +27,13 @@
         "items": [
             "Native iOS (Swift + SwiftUI)",
             "Native Android (Kotlin/Java)"
+        ]
+    },
+    {
+        "name": "Platforms",
+        "items": [
+            "Firebase",
+            "Amazon Web Services"
         ]
     },
     {
