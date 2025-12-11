@@ -1,26 +1,35 @@
+import fadeEffectConfig from "../resources/fadeEffectConfig.json";
+
 class FadeEffect extends HTMLElement {
     connectedCallback() {
         this.canvas = this.getOrCreateCanvas();
         this.context = this.canvas.getContext("2d");
         this.circles = [];
-        this.fadeDuration = 2e3;
+        this.fadeDuration = this.dataset.fadeDuration || fadeEffectConfig.fadeDuration;
         this.target = this.dataset.target ? this.closest(this.dataset.target) : this.canvas;
-        this.colorRgb = this.dataset.colorRgb;
+        this.colorRgb = this.dataset.colorRgb || fadeEffectConfig.defaultPrimaryColor;
+        this.colorRgbClick = this.dataset.colorRgbClick || fadeEffectConfig.defaultSecondaryColor;
+        this.clickChangeColor = this.dataset.clickChangeColor === "true";
         this.accelerometer = null;
         this.listeningDeviceMotion = false;
+        this.isMouseDown = false;
 
         this.window_resizeHandler = () => this.updateCanvasSize();
         this.mouseMoveHandler = (e) => this.addCircle(e.clientX, e.clientY + window.scrollY);
         this.touchMoveHandler = (e) => this.onTouchMove(e.touches);
         this.acl_readingHandler = () => this.updateFromAccelerometer();
         this.deviceMotion_handler = (e) => this.updateFromDeviceMotion(e.accelerationIncludingGravity);
+        this.mouseDownHandler = () => this.isMouseDown = true;
+        this.mouseLeaveOrUpHandler = () => this.isMouseDown = false;
+        
+        this.updateCanvasSize();
+        this.animate();
 
         window.addEventListener("resize", this.window_resizeHandler);
-
-        this.updateCanvasSize();
-        
-        this.animate();
         this.target.addEventListener("mousemove", this.mouseMoveHandler);
+        this.target.addEventListener("mousedown", this.mouseDownHandler);
+        this.target.addEventListener("mouseleave", this.mouseLeaveOrUpHandler);
+        this.target.addEventListener("mouseup", this.mouseLeaveOrUpHandler);
 
         if (window.DeviceMotionEvent && !DeviceMotionEvent.requestPermission) {
             this.accelerometer = this.setupAccelerometer();
@@ -31,6 +40,10 @@ class FadeEffect extends HTMLElement {
 
     disconnectedCallback () {
         window.removeEventListener("resize", this.window_resizeHandler);
+
+        this.target.removeEventListener("mousedown", this.mouseDownHandler);
+        this.target.removeEventListener("mouseleave", this.mouseLeaveOrUpHandler);
+        this.target.removeEventListener("mouseup", this.mouseLeaveOrUpHandler);
         this.target.removeEventListener("mouseover", this.mouseMoveHandler);
 
         if (this.accelerometer) {
@@ -92,7 +105,7 @@ class FadeEffect extends HTMLElement {
     }
 
     setupAccelerometer () {
-        if (!("Accelerometer" in window)) {
+        if (!window.Accelerometer) {
             console.error("Accelerometer is not available");
             return null;
         }
@@ -160,9 +173,14 @@ class FadeEffect extends HTMLElement {
         const alpha = Math.max(.5 - progress, 0);
         const radius = 700 * Math.max(progress, .05);
         const gradient = this.context.createRadialGradient(x, y, 0, x, y, radius);
+        let color = this.colorRgb;
 
-        gradient.addColorStop(0, `rgba(${this.colorRgb}, ${alpha})`);
-        gradient.addColorStop(1, `rgba(${this.colorRgb}, 0)`);
+        if (this.clickChangeColor && this.isMouseDown && this.colorRgbClick) {
+            color = this.colorRgbClick;
+        }
+
+        gradient.addColorStop(0, `rgba(${color}, ${alpha})`);
+        gradient.addColorStop(1, `rgba(${color}, 0)`);
         
         this.context.fillStyle = gradient;
 
