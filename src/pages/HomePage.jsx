@@ -33,11 +33,11 @@ function HomePage () {
         <PageContainer>
             <section className="relative p-base w-full min-h-screen bg-black text-white flex items-center justify-center cursor-plus">
                 <FadeBackground className="absolute inset-0 size-full opacity-75" clickChangeColor={true} targetSelector="section">
-                    <div className="code-hero-bg">
+                    <div className="code-hero-bg pointer-events-none select-none">
                         <img src={codeHeroBg} alt=""/>
                     </div>
                 </FadeBackground>
-                <div className="relative space-y-lg z-10">
+                <div className="relative space-y-lg z-10 select-none">
                     <div className="border-current border-l flex flex-col px-2xl pt-6 gap-1">
                         <h1 className="text-2xl font-bold">
                             Andrea Sala
