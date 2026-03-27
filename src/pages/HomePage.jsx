@@ -6,19 +6,12 @@ import GradientBtn from "../components/common/GradientBtn";
 import PageContainer from "../components/PageContainer";
 import RouteMap from "../constants/RouteMap";
 import CardSlider from "../components/common/CardSlider";
-import ProjectCard from "../components/common/ProjectCard";
-import Popover from "../components/common/Popover";
-import VideoModal from "../components/modals/VideoModal";
-import NiceModal from "@ebay/nice-modal-react";
-
 import codeHeroBg from "../assets/code-hero-bg.png";
-import projJsSnake from "../assets/proj-js-snake.png";
-import origoLogo from "../assets/origo-logo.png";
-import projShipBattle from "../assets/proj-ship-battle.png";
-import projTnttag from "../assets/proj-tnttag.png";
-import origoVideo from "../assets/origo-video.mov";
-
 import skillsList from "../resources/skillList.json";
+import TntTagProjCard from "../components/projCards/TntTagProjCard";
+import SnakeProjCard from "../components/projCards/SnakeProjCard";
+import OrigoProjCard from "../components/projCards/OrigoProjCard";
+import ShipBattleProjCard from "../components/projCards/ShipBattleProjCard";
 
 function HomePage () {
     const { setFixedHeader } = useGlobalContext();
@@ -70,105 +63,10 @@ function HomePage () {
                 <h2 className="h1 px-6 mb-12 text-center uppercase">In evidenza</h2>
                 <div className="px-xl max-w-7xl mx-auto">
                     <CardSlider className="select-none" loop navigation>
-                        <ProjectCard
-                            imgSrc={projJsSnake}
-                            imgAlt="JS Snake"
-                            content={<>
-                                <h2 className="h2">JS Snake</h2>
-                                <p>Snake game in JavaScript</p>
-                            </>}
-                            links={<>
-                                <div className="proj-card-links-left">    
-                                    <a href="https://github.com/deka9584/JS-SnakeGame" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i className="bi bi-github"></i>
-                                        <span className="font-medium">Repo</span>
-                                    </a>
-                                </div>
-                                <div className="proj-card-links-right">
-                                    <a href="http://snake.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md ms-auto">
-                                        <span className="font-medium">Live</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
-                                </div>
-                            </>}
-                        />
-                        <ProjectCard
-                            imgSrc={origoLogo}
-                            imgAlt="Origo"
-                            content={<>
-                                <h2 className="h2">Origo</h2>
-                                <p>Website SEO and Copy tester</p>
-                            </>}
-                            links={<>
-                                <div className="proj-card-links-left">
-                                    <button type="button" onClick={() => NiceModal.show(VideoModal, { src: origoVideo })} className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i className="bi bi-play-fill"></i>
-                                        <span className="font-medium">Video</span>
-                                    </button>
-                                </div>
-                                <div className="proj-card-links-right">
-                                    <Popover
-                                        triggerContent={
-                                            <i className="bi bi-exclamation-circle"></i>
-                                        }
-                                        triggerClassName="btn btn-animated text-alert p-sm"
-                                    >
-                                        <p className="text-sm font-medium">
-                                            I servizi back-end, il dominio originale e la versione definitiva front-end del progetto sono stati disattivati. <br />
-                                            Il video mostra il funzionamento originale.
-                                        </p>
-                                    </Popover>
-                                </div>
-                            </>}
-                        />
-                        <ProjectCard
-                            imgSrc={projTnttag}
-                            imgAlt="TNT TAG"
-                            content={<>
-                                <h2 className="h2">TNT TAG</h2>
-                                <p>Minigame plugin in Java per server Minecraft Spigot</p>
-                            </>}
-                            links={<>
-                                <div className="proj-card-links-left">
-                                    <a href="https://github.com/PereCraft/TNTTag" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i className="bi bi-github"></i>
-                                        <span className="font-medium">Repo</span>
-                                    </a>
-                                </div>
-                                <div className="proj-card-links-right">
-                                    <a href="https://github.com/PereCraft/TNTTag/releases" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md ms-auto">
-                                        <span className="font-medium">Releases</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
-                                </div>
-                            </>}
-                        />
-                        <ProjectCard
-                            imgSrc={projShipBattle}
-                            imgAlt="Ship Battle"
-                            content={<>
-                                <h2 className="h2">Ship Battle</h2>
-                                <p>Ship Battle in JS (client + server)</p>
-                            </>}
-                            links={<>
-                                <div className="proj-card-links-left">
-                                    <a href="https://github.com/deka9584/shipbattle_client" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i className="bi bi-github"></i>
-                                        <span className="font-medium">Repo Client</span>
-                                    </a>
-                                    <a href="https://github.com/deka9584/shipbattle_server" target="_blank" rel="noreferrer" className="btn btn-dark btn-animated rounded-sm space-x-md">
-                                        <i className="bi bi-github"></i>
-                                        <span className="font-medium">Repo Server</span>
-                                    </a>
-                                </div>
-                                <div className="proj-card-links-right">
-                                    <a href="http://ships.salaandrea.altervista.org/" target="_blank" rel="noreferrer" className="btn btn-primary btn-animated rounded-sm space-x-md">
-                                        <span className="font-medium">Client Demo</span>
-                                        <i className="bi bi-box-arrow-up-right"></i>
-                                    </a>
-                                </div>
-                            </>}
-                        />
+                        <SnakeProjCard/>
+                        <OrigoProjCard/>
+                        <TntTagProjCard/>
+                        <ShipBattleProjCard/>
                     </CardSlider>
                 </div>
             </section>
